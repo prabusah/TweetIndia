@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>t2i - Tweet India</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Prabusah" />
+    <meta name="theme-color" content="#006cb4" id="themeColor">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no">
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding-top:50px; }
+        .bodyCustom {
+          background: #027cd5;
+          color: white;
+        }
+        .templateCustom {
+          width: 100%;
+          position: relative;
+          padding: 30px;
+          color: white;
+          text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          background-color: #6f5499;
+          background-repeat: repeat-x;
+        }
+        .typeahead,
+        .tt-query,
+        .tt-hint {
+          width: 354px;
+          height: 34px;
+          padding: 8px 12px;
+          line-height: 30px;
+          border: 2px solid #ccc;
+          -webkit-border-radius: 8px;
+             -moz-border-radius: 8px;
+                  border-radius: 8px;
+          outline: none;
+        }
+        .typeahead {
+          background-color: #fff;
+        }
+        .typeahead:focus {
+          border: 2px solid #3879D9;
+        }
+        .tt-query {
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+             -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        }
+        .tt-hint {
+          color: #999
+        }
+        .tt-menu {
+          color: black;
+          width: 450px;
+          margin: 12px 0;
+          padding: 8px 0;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          -webkit-border-radius: 8px;
+             -moz-border-radius: 8px;
+                  border-radius: 8px;
+          -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+             -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+                  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        }
+        .tt-suggestion {
+          padding: 3px 20px;
+          line-height: 24px;
+        }
+        .tt-suggestion:hover {
+          cursor: pointer;
+          color: #fff;
+          background-color: #3879D9;
+        }
+        .tt-suggestion.tt-cursor {
+          color: #fff;
+          background-color: #3879D9;
+
+        }
+        .tt-suggestion p {
+          margin: 0;
+        }
+    </style>
+    <link rel="manifest" href="static/assets/manifest.json">
+    <link rel="icon" href="/static/assets/images/chrome-touch-icon-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="/static/assets/images/chrome-touch-icon-384x384.png" sizes="384x384" type="image/png">
+</head>
+<body class="container bodyCustom">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tweet India</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+            <ul class="nav navbar-nav">
+              <li class="active"><a class="home" href="/">Home</a></li>
+              <li><a class="about" href="/static/about.html">About</a></li>
+              <li><a class="contact" href="/static/contact.html">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+    <div class="starter-template">
+        <h1>Tweet India !</h1>
+        <p class="lead">Here's a SuperEasy way to Thank / Complaint / Suggest various Indian Ministries. Yay! what are you waiting for?. Let the Tweet's begin !!</p>
+    </div>
+<form class="form-horizontal" action="/twitterSignIn" method="post">
+  <div class="form-group">
+    <label for="ministry" class="col-sm-5 control-label">Ministry</label>
+    <div class="col-sm-7">
+      <input type="text" id="ministry" class="typeahead form-control" style="vertical-align: middle;" id="exampleInputAmount" placeholder="Ministry" autocomplete="off" spellcheck="false" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="ministryHandle" class="col-sm-5 control-label">Ministry Handle</label>
+    <div class="col-sm-7">
+      <input type="text" class="ministry form-control" id="ministryHandle" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="cmHandle" class="col-sm-5 control-label">Cabinet Minister</label>
+    <div class="col-sm-7">
+      <input type="text" class="cm form-control" id="cmHandle" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="dropDownZones" class="col-sm-5 control-label">Zone</label>
+    <div class="col-sm-7">
+      <select class="form-control" id="dropDownZones">
+        <option value="None" selected="Selected">Select Zone</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="gmHandle" class="col-sm-5 control-label">General Manager</label>
+    <div class="col-sm-7">
+      <input type="text" class="gm form-control" id="gmHandle" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="dropDownDRMS" class="col-sm-5 control-label">Division</label>
+    <div class="col-sm-7">
+      <select class="form-control" id="dropDownDRMS">
+        <option value="None" selected="Selected">Select Division</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="drmHandle" class="col-sm-5 control-label">Divional Railway Manager</label>
+    <div class="col-sm-7">
+      <input type="text" class="drm form-control" id="drmHandle" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="dropdownType" class="col-sm-5 control-label">Tweet Type</label>
+    <div class="col-sm-7">
+      <select class="form-control" id="dropdownType">
+        <option value="None" selected="Selected">Select Type</option>
+        <option value="Thankyou">Thankyou</option>
+        <option value="Complaint">Complaint</option>
+        <option value="Suggestion">Suggestion</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="tweetContent" class="col-sm-5 control-label">Tweet Content</label>
+    <div class="col-sm-7">
+      <textarea id="tweetContent" name="tweetContent" class="form-control" rows="3" maxlength="140"></textarea>
+    </div>
+  </div>
+                            
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default center-block">Sign-in Twitter</button>
+    </div>
+  </div>
+</form>
+    <footer class="footer bg-primary">
+      <div class="container">
+        <p class=" text-center">Developed as part of Digital Me Challenge 2 by Prabusah (prabusah.boblamohansah@tcs.com)</p>
+      </div>
+    </footer>
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/js/typeahead.bundle.min.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/common.js"></script>
+  </body>
+</html> 
+         

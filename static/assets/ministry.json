@@ -1,0 +1,70 @@
+"Name": "Ministry of Railways"
+"Ministry": ""
+"CM": ""
+"Zones": {
+	"Central": {
+		"gm": "@gm_crly",
+		"drms": [{"Mumbai":"@drmmumbaicr"}, {"Nagpur": "@drmcrngp"}, {"Pune": "@drmpune"}, {"Solapur": "@drmsolapur"}, {"Bhusavaldivn": "@bhusavaldivn"}]
+	},
+	"Eastern": {
+		"gm": "@EasternRailway",
+		"drms": [{"Sealdah":"@drmsdah"}, {"Howrah": "@drmhowrah"}, {"Malda": "@drmmalda"}]
+	}
+}
+
+
+"zone": "central", "gm": "@gm_crly", "drms": [{"mumbai":"@drmmumbaicr"}, {"nagpur": "@drmcrngp"}, {"pune": "@drmpune"}, {"solapur": "@drmsolapur"}, {"bhusavaldivn": "@bhusavaldivn"}]
+
+{ "Id": "1",  "Name":  "Ministry of Agriculture"}, 
+{ "Id": "2",  "Name":  "Ministry of Chemicals and Fertilizers"}, 
+{ "Id": "3",  "Name":  "Ministry of Civil Aviation"}, 
+{ "Id": "4",  "Name":  "Ministry of Coal"}, 
+{ "Id": "5",  "Name":  "Ministry of Commerce and Industry"}, 
+{ "Id": "6",  "Name":  "Ministry of Communications and Information Technology"}, 
+{ "Id": "7",  "Name":  "Ministry of Consumer Affairs, Food and Public Distribution"}, 
+{ "Id": "8",  "Name":  "Ministry of Youth Affairs and Sports"}, 
+{ "Id": "9",  "Name":  "Ministry of Corporate Affairs"}, 
+{ "Id": "10",  "Name":  "Ministry of Culture"}, 
+{ "Id": "11",  "Name":  "Ministry of Defence"}, 
+{ "Id": "12",  "Name":  "Ministry of Development of North Eastern Region"}, 
+{ "Id": "13",  "Name":  "Ministry of Drinking Water Supply and Sanitation"}, 
+{ "Id": "14",  "Name":  "Ministry of Earth Sciences"}, 
+{ "Id": "15",  "Name":  "Ministry of Environment, Forest and Climate Change"}, 
+{ "Id": "16",  "Name":  "Ministry of Women and Child Development"}, 
+{ "Id": "17",  "Name":  "Ministry of External Affairs"}, 
+{ "Id": "18",  "Name":  "Ministry of Finance"}, 
+{ "Id": "19",  "Name":  "Ministry of Food Processing Industries"}, 
+{ "Id": "20",  "Name":  "Ministry of Health and Family Welfare"}, 
+{ "Id": "21",  "Name":  "Ministry of Heavy Industries and Public Enterprises"}, 
+{ "Id": "22",  "Name":  "Ministry of Home Affairs"}, 
+{ "Id": "23",  "Name":  "Ministry of Housing and Urban Poverty Alleviation"}, 
+{ "Id": "24",  "Name":  "Ministry of Human Resource Development"}, 
+{ "Id": "25",  "Name":  "Ministry of Information and Broadcasting"}, 
+{ "Id": "26",  "Name":  "Ministry of Labour and Employment"}, 
+{ "Id": "27",  "Name":  "Ministry of Law and Justice"}, 
+{ "Id": "28",  "Name":  "Ministry of Micro, Small and Medium Enterprises"}, 
+{ "Id": "29",  "Name":  "Ministry of Water Resources"}, 
+{ "Id": "30",  "Name":  "Ministry of Mines"}, 
+{ "Id": "31",  "Name":  "Ministry of Minority Affairs"}, 
+{ "Id": "32",  "Name":  "Ministry of New and Renewable Energy"}, 
+{ "Id": "33",  "Name":  "Ministry of Overseas Indian Affairs"}, 
+{ "Id": "34",  "Name":  "Ministry of Panchayati Raj"}, 
+{ "Id": "35",  "Name":  "Ministry of Parliamentary Affairs"}, 
+{ "Id": "36",  "Name":  "Ministry of Personnel, Public Grievances and Pensions"}, 
+{ "Id": "37",  "Name":  "Ministry of Urban Development"}, 
+{ "Id": "38",  "Name":  "Ministry of Petroleum and Natural Gas"}, 
+{ "Id": "39",  "Name":  "Ministry of Planning"}, 
+{ "Id": "40",  "Name":  "Ministry of Power"}, 
+{ "Id": "41",  "Name":  "Ministry of Railways"}, 
+{ "Id": "42",  "Name":  "Ministry of Road Transport and Highways"}, 
+{ "Id": "43",  "Name":  "Ministry of Rural Development"}, 
+{ "Id": "44",  "Name":  "Ministry of Science and Technology"}, 
+{ "Id": "45",  "Name":  "Ministry of Shipping"}, 
+{ "Id": "46",  "Name":  "Ministry of Skill Development and Entrepreneurship"}, 
+{ "Id": "47",  "Name":  "Ministry of Social Justice and Empowerment"}, 
+{ "Id": "48",  "Name":  "Ministry of Statistics and Programme Implementation"}, 
+{ "Id": "49",  "Name":  "Ministry of Steel"}, 
+{ "Id": "50",  "Name":  "Ministry of Textiles"}, 
+{ "Id": "51",  "Name":  "Ministry of Tourism"}, 
+{ "Id": "52",  "Name":  "Ministry of Tribal Affairs"}, 
+{ "Id": "53",  "Name":  "Ministry of Urban Development"}

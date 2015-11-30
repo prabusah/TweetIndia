@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>t2i - Tweet India</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Prabusah" />
+    <meta name="theme-color" content="#006cb4" id="themeColor">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no"> 
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body    { padding-top:50px; }
+        .bodyCustom {
+          background: #027cd5;
+          color: white;
+        }
+        .customColor {
+          color: white;
+        }
+    </style>
+    <link rel="manifest" href="static/assets/manifest.json">
+    <link rel="icon" href="/static/assets/images/chrome-touch-icon-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="/static/assets/images/chrome-touch-icon-384x384.png" sizes="384x384" type="image/png">
+</head>
+<body class="container bodyCustom">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tweet India</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+            <ul class="nav navbar-nav">
+              <li><a class="home" href="/">Home</a></li>
+              <li><a class="about" href="/static/about.html">About</a></li>
+              <li><a class="contact" href="/static/contact.html">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+     <div class="starter-template">
+        <h3>Preview the content then Tweet</h3>
+        <p>Please make sure: </p>
+        <li>Language is proper</li>
+        <li>No Threats. No Abuse. No Spamming.</li>
+        <li>Picture is eligible for official viewing (No porn etc.)</li>
+        <li>Tweets posted using your logon details.</li>
+        <li>Sole responsibility lies in you.</li> 
+    </div>
+<p>You agree to above conditions on clicking Tweet button below</p>
+<form class="form-horizontal" action="/update" method="post" id="myForm" enctype="multipart/form-data">
+  <div class="form-group">
+    <div class="col-sm-7">
+      <textarea id="tweetContent" name="tweetContent" class="form-control" rows="3" maxlength="140"><%= tweetContent %></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-7">
+    <label for="my_file">Picture upload</label>
+    <input type="file" name="my_file" id="my_file"> 
+    <p class="help-block customColor">Take a picture from mobile camera or upload an existing picture!</p>
+  </div>
+  </div>
+                           
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default center-block">Tweet</button>
+    </div>
+  </div>
+</form>
+    <footer class="footer bg-primary">
+      <div class="container">
+        <p class=" text-center">Developed as part of Digital Me Challenge 2 by Prabusah (prabusah.boblamohansah@tcs.com)</p>
+      </div>
+    </footer>
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/js/typeahead.bundle.min.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/common.js"></script>
+  </body>
+</html> 
