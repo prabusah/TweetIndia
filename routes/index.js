@@ -1,5 +1,18 @@
 //ALWAYS LAUNCH USING http://127.0.0.1:8080 as in SYNC with CALLBACK.
 //OTHERWISE YOU WILL GET NEW SESSIONID ON CALLBACK.
+
+/*
+APIs Used
+1. POST oauth/request_token
+    Send request_token to sign-in screen
+    Returns to callback url
+2. POST oauth/access_token
+    Get access_token and pass it along subsequent calls
+3. POST media/upload
+    Returns media_string_id valid till 60mins
+4. POST statuses/update
+    Pass media_string_id to post a tweet with media
+*/
 var express = require('express');
 var router = express.Router();
 var twitterAPI = require('node-twitter-api');

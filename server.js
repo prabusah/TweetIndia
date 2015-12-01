@@ -5,7 +5,6 @@ var http    = require( 'http' );
 var path = require('path');
 var session = require('express-session');
 var favicon = require('serve-favicon');
-//var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
@@ -22,16 +21,12 @@ app.engine( 'ejs', engine );
 app.set( 'views', path.join( __dirname, 'views' ));
 app.set( 'view engine', 'ejs' );
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/static/favicon.ico'));
-//app.use(logger('dev'));
 app.use(cookieParser()); //cookieparser must be before
 app.use(session({ resave: false,
                   saveUninitialized: false,
                   secret: '12341234qwert' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ keepExtensions: true,extended: false }));
-//app.use(ejsLayout);
 app.use('/static', function(req, res, next) {
     setTimeout(next, 200);
 });
@@ -41,19 +36,6 @@ app.use('/static', serveStatic(__dirname + '/static', {
 }));
 
 app.use('/', routes);
-/*app.get(  '/header', routes.header );
-app.get(  '/guest', routes.guest );
-app.post( '/registeruser', routes.registeruser );
-app.get( '/alreadyregistered', routes.alreadyregistered );
-app.get('/login', routes.login );
-app.post('/verify', routes.verify );
-app.get('/createevent', routes.createevent );
-app.post('/saveevent', routes.saveevent );
-app.get('/viewevents', routes.viewevents );
-app.get('/editevents', routes.editevents );
-app.get('/searchevents', routes.searchevents );
-app.post('/searcheventsbypincode', routes.searcheventsbypincode );*/
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
