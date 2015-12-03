@@ -9,11 +9,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var engine  = require( 'ejs-locals' );
+var compression = require('compression');
 var multer = require('multer');
 
 var routes = require('./routes/index');
 
 var app = express();
+var oneDay = 86400000;
+app.use(compression());
 app.set( 'port', process.env.PORT || 8080 );
 app.engine( 'ejs', engine );
 
@@ -32,7 +35,8 @@ app.use('/static', function(req, res, next) {
 });
 
 app.use('/static', serveStatic(__dirname + '/static', {
-    lastModified: false
+    lastModified: false,
+    maxAge: oneDay
 }));
 
 app.use('/', routes);

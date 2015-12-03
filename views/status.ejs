@@ -7,12 +7,7 @@
     <meta name="theme-color" content="#006cb4" id="themeColor">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no"> 
     <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body    { padding-top:150px; }
-        .bodyCustom {
-          background: #027cd5;
-          color: black;
-        }
+    <style>body{padding-top:150px;}.helpCustom{color:yellow;}.bodyCustom{background:#027cd5;color:black;}
     </style>
     <link rel="manifest" href="static/assets/manifest.json">
     <link rel="icon" href="/static/assets/images/chrome-touch-icon-192x192.png" sizes="192x192" type="image/png">
@@ -36,22 +31,24 @@
               <li><a class="about" href="/static/about.html">About</a></li>
               <li><a class="contact" href="/static/contact.html">Contact</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+        </div>
     </nav>
 <main>
     <div class="jumbotron"> 
         <p><%= status%></p>
     </div>
+    <div class="starter-template">
+        <p class="help-block helpCustom">if picture uploaded by capturing from mobile camera - It will take approx. 15 seconds to reflect in Twitter</p>
+    </div>  
+
 </main>
     <footer class="footer bg-primary">
       <div class="container">
         <p class=" text-center">Developed as part of Digital Me Challenge 2 by Prabusah (prabusah.boblamohansah@tcs.com)</p>
       </div>
     </footer>
-    <script src="/static/assets/js/jquery.min.js"></script>
-    <script src="/static/assets/js/typeahead.bundle.min.js"></script>
-    <script src="/static/assets/js/bootstrap.min.js"></script>
-    <script src="/static/assets/js/common.js"></script>
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/bootstrap.min.js"></script>
   </body>
 </html> 

@@ -21,9 +21,9 @@ var multer  = require('multer');
 var upload = multer({ dest: 'public/uploads/' });
 
 var twitter = new twitterAPI({
-    consumerKey: 'CONSUMERKEY FROM TWITTER',
-    consumerSecret: 'CONSUMERSECRET FROM TWITTER',
-    callback: 'http://gapi-54290.onmodulus.net/callbackurl'
+    consumerKey: 'consumerKey',
+    consumerSecret: 'consumerSecret',
+    callback: 'https://t2i.mod.bz/callbackurl'
     //callback: 'http://127.0.0.1:8080/callbackurl'
 });
 
@@ -96,16 +96,18 @@ router.post('/update', upload.single('my_file'), function(req, res, next) {
                         sess.aTokenSecret,
                         function(error, data) {
                             if (error) {
-                                result = "Tweet failed. Please try later : "+ error; 
-                            } else {
-                                result = "Tweet Success!";
+                                result = "Tweet failed. Please try later : "+ error;
+                                res.render('status.ejs',{
+                                    status: result
+                                }); 
                             }
-                            res.render('status.ejs',{
-                                status: result
-                            });
                     });
                 }
-        });
+            });
+            res.render('status.ejs',{
+                status: "Tweet Success!"
+            });
+        
     }else {
         twitter.statuses("update", {
                 status: req.body.tweetContent
@@ -114,13 +116,14 @@ router.post('/update', upload.single('my_file'), function(req, res, next) {
             sess.aTokenSecret,
             function(error, data) {
                 if (error) {
-                    result = "Tweet failed. Please try later : "+ error; 
-                } else {
-                    result = "Tweet Success!";
+                    result = "Tweet failed. Please try later : "+ error;
+                    res.render('status.ejs',{
+                        status: result
+                    }); 
                 }
-                res.render('status.ejs',{
-                    status: result
-                });
+        });
+        res.render('status.ejs',{
+            status: "Tweet Success!"
         });
     }
     
