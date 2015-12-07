@@ -7,8 +7,7 @@
     <meta name="theme-color" content="#006cb4" id="themeColor">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no"> 
     <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
-    <style>body{padding-top:50px;}.bodyCustom{background:#027cd5;color:white;}.customColor{color: white;}
-    </style>
+    <style>{padding-top:50px}.bodyCustom{background:#027cd5;color:#fff;position:relative;z-index:1}.customColor{color:#fff}.spinner{display:none;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;z-index:1001;-moz-opacity:.8;opacity:.8;filter:alpha(opacity=80)}</style>
     <link rel="manifest" href="static/assets/manifest.json">
     <link rel="icon" href="/static/assets/images/chrome-touch-icon-192x192.png" sizes="192x192" type="image/png">
     <link rel="icon" href="/static/assets/images/chrome-touch-icon-384x384.png" sizes="384x384" type="image/png">
@@ -51,15 +50,17 @@
   </div>
   <div class="form-group">
     <div class="col-sm-7">
-    <label for="my_file">Picture upload</label>
-    <input type="file" name="my_file" id="my_file"> 
-    <p class="help-block customColor">Take a picture from mobile camera or upload an existing picture!</p>
-  </div>
+      <label for="my_file">Picture upload</label>
+      <input type="file" name="my_file" id="my_file"> 
+      <p class="help-block customColor">Take a picture from mobile camera or upload an existing picture!</p>
+    </div>
+    <input type="hidden" id="ministry" value="temp">
+    <div id="spinner" class="spinner"></div> 
   </div>
                            
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default center-block">Tweet</button>
+      <button type="submit" id="tweetButton" class="btn btn-default center-block has-spinner">Tweet</button>
     </div>
   </div>
 </form>
@@ -70,5 +71,7 @@
     </footer>
     <script src="/static/assets/js/jquery.min.js"></script>
     <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/typeahead.bundle.min.js"></script>
+    <script src="/static/assets/js/common-spin-min.js"></script>
   </body>
 </html> 

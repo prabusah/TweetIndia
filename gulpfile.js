@@ -4,6 +4,13 @@ var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
 var minify = require('gulp-minify');
 var minifyCss = require('gulp-minify-css');
+var concat = require('gulp-concat');
+ 
+gulp.task('scripts', function() {
+  return gulp.src(['./lib/file3.js', './lib/file1.js', './lib/file2.js'])
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./dist/'));
+});
 // Define paths variables
 var dest_path =  'static/assets';
 var paths = {
@@ -11,7 +18,7 @@ var paths = {
   'bower_components/jquery/dist/*.js', 'bower_components/typeahead.js/dist/typeahead.bundle.min.js'],
 };
 var customJSPath = {
-  customScripts: ['static/assets/js/common.js']
+  customScripts: ['static/assets/js/common-spin.js']
 };
 var customCSSPath = {
   customCSS: ['static/assets/css/inline.css']
@@ -30,6 +37,11 @@ gulp.task('css', function() {
     .pipe(cssFilter)
     .pipe(gulp.dest(dest_path + '/css/'));
 });
+gulp.task('concat', function() {
+  return gulp.src(['static/assets/js/common.js', 'static/assets/js/spin.min.js'])
+    .pipe(concat('common-spin.js'))
+    .pipe(gulp.dest(dest_path + '/js/'));
+});
 gulp.task('compressJS', function() {
      return gulp.src(customJSPath.customScripts)
     .pipe(minify({ignoreFiles: ['*min.js', '*.css']}))
@@ -42,4 +54,4 @@ gulp.task('compressCSS', function() {
 });
 
 
-gulp.task('default', ['js','css', 'compressJS', 'compressCSS']);
+gulp.task('default', ['concat', 'js', 'css', 'compressJS', 'compressCSS']);
